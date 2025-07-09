@@ -61,8 +61,19 @@ function groupByFriendCount(usersArray)
     return result;
 }
 
-function getUniqueFriendList()
+function getUniqueFriendList(usersArray)
 {
+    let setUsers = new Set();
+    for (object of usersArray)
+    {
+        for (element of object.friends)
+        {
+            setUsers.add(element);
+        }
+
+    }
+
+    return Array.from(setUsers);
 
 }
 
