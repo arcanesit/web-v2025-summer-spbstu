@@ -61,6 +61,51 @@ function groupByFriendCount(usersArray)
     return result;
 }
 
+function getUniqueFriendList()
+{
+
+}
+
+function listMutualFriends(id, usersArray)
+{
+    result = [];
+    for (object of usersArray)
+    {
+        if (object.friends.includes(id))
+        {
+            result.push(object);
+        }
+    }
+    return result;
+}
+
+function getUsersFriendsMore(count, usersArray)
+{
+    result = [];
+    for (object of usersArray)
+    {
+        if (object.friendCount > count)
+        {
+            result.push(object);
+        }
+    }
+
+    return result;
+}
+
+function getListUsersWithoutFriends(usersArray)
+{
+    result = [];
+    for (object of usersArray)
+    {
+        if (object.friendCount == 0)
+        {
+            result.push(object);
+        }
+    }
+    return result;
+}
+
 let person = new User(0, "username", [1,2,3,4,5]);
 console.log(person.addFriend(6));
 console.log(person.friends);
@@ -68,3 +113,4 @@ console.log(person.removeFriend(6));
 console.log(person.friends);
 console.log(person.friendCount);
 console.log(groupByFriendCount(usersArray));
+console.log(getUsersFriendsMore(1, usersArray));
