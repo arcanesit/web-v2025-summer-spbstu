@@ -125,3 +125,4 @@ console.log(person.friends);
 console.log(person.friendCount);
 console.log(groupByFriendCount(usersArray));
 console.log(getUsersFriendsMore(1, usersArray));
+console.log(getUniqueFriendList(usersArray));
