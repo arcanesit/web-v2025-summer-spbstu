@@ -118,11 +118,3 @@ function getListUsersWithoutFriends(usersArray)
 }
 
 let person = new User(0, "username", [1,2,3,4,5]);
-console.log(person.addFriend(6));
-console.log(person.friends);
-console.log(person.removeFriend(6));
-console.log(person.friends);
-console.log(person.friendCount);
-console.log(groupByFriendCount(usersArray));
-console.log(getUsersFriendsMore(1, usersArray));
-console.log(getUniqueFriendList(usersArray));

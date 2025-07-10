@@ -5,11 +5,11 @@ import {User} from "./script.js"
 document.addEventListener("DOMContentLoaded", () =>
 {
     let users = [];
-    addUserBtn = document.querySelector("#add-user-btn");
+    let addUserBtn = document.querySelector("#add-user-btn");
     addUserBtn.addEventListener("click", async () => {
-        id = +document.getElementById("ID").value;
-        Name = document.getElementById("Name").value;
-        await addUser(id, Name);
+        const id = +document.getElementById("ID").value;
+        const name = document.getElementById("Name").value;
+        await addUser(id, name);
         document.getElementById("ID").value = "";
         document.getElementById("Name").value = "";
     })
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () =>
     {
         return new Promise(() => {
             setTimeout(() => {
-                newUser = new User(id, name);
+                const newUser = new User(id, name);
                 users.push(newUser);
                 saveUserToLocalStorage();
                 alert("User added successfully");
@@ -31,4 +31,7 @@ document.addEventListener("DOMContentLoaded", () =>
         localStorage.setItem("user", JSON.stringify(users));
     }
 });
+
+let local = localStorage.getItem("user");
+console.log(local);
 
